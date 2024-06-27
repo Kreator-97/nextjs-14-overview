@@ -4,6 +4,7 @@ const items = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
+  { href: '/users', label: 'Users' },
 ]
 
 export const Navbar = () => {
