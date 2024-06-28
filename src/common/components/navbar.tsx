@@ -5,6 +5,8 @@ const items = [
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
   { href: '/users', label: 'Users' },
+  { href: '/posts', label: 'Posts' },
+  { href: '/auth/login', label: 'Login' },
 ]
 
 export const Navbar = () => {

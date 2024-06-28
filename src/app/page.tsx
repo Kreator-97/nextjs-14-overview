@@ -8,7 +8,7 @@ export default function Home() {
       <h1 className="heading">Home page updated</h1>
 
       <ShowName />
-      <ClockTime />
+      {/* <ClockTime /> */}
     </main>
   );
 }
