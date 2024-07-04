@@ -7,5 +7,3 @@ To start your development server follow the next steps
 3. Copy the file `.env.example` and rename it to `.env`
 4. Fill it out using your own env variables
 5. Start your development server with `npm run dev`
-
-
