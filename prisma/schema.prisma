@@ -21,10 +21,16 @@ model User {
 }
 
 model Post {
-  id        String @id @default(cuid())
+  id        String  @id @default(cuid())
   title     String
   content   String
+  status    status  @default(DRAFT)
   published Boolean @default(false)
-  author    User   @relation(fields: [authorId], references: [id])
+  author    User    @relation(fields: [authorId], references: [id])
   authorId  String
+}
+
+enum status {
+  DRAFT
+  PUBLISHED
 }
