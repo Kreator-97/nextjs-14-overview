@@ -1,25 +1,20 @@
 
-// https://jsonplaceholder.typicode.com/posts
-import { getAllPosts } from "@/posts/services"
-import Link from "next/link"
+import { PostForm } from "@/posts/components/post-form"
+import { PostList } from "@/posts/components/post-list"
+import { postService } from "@/posts/server/services"
 
-export default async function PostsPage(){
-    const posts = await getAllPosts()
+export default async function PostsPage() {
+  const posts = await postService.getAll()
 
-    console.log(posts)
+  console.log({ posts })
 
-    return (
-      <main>
-        <h1 className="">Post</h1>
+  return (
+    <main className="p-4">
+      <h1 className="">All Posts</h1>
 
-        {
-          posts.map((post: any) => (
-            <article key={post.id}>
-              <h2 >{post.title}</h2>
-              <Link href={`/posts/${post.id}`}>Go to post</Link>
-            </article>
-          ))
-        }
+      <PostForm/>
+
+      <PostList posts={posts} />
     </main>
   )
 }

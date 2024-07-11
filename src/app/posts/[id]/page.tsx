@@ -1,15 +1,20 @@
-import { getPost } from "@/posts/services"
+import { postService } from "@/posts/server/services"
 
 export default async function PostPage(
-  {params}:{params:{id:string}}
+  { params }: { params: { id: string } }
 ){
-  const post = await getPost(params.id)
-
-  console.log(post)
+  const post = await postService.getOne(params.id)
+  console.log({ post })
 
   return (
     <main>
-      <h1>{post.title}</h1>
+      <h1>{post?.title}</h1>
+
+      <p>
+        {
+          post?.content
+        }
+      </p>
 
     </main>
   )
