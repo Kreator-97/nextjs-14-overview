@@ -7,6 +7,7 @@ const items = [
   { href: '/users', label: 'Users' },
   { href: '/posts', label: 'Posts' },
   { href: '/auth/login', label: 'Login' },
+  { href: '/time', label: 'Time' },
 ]
 
 export const Navbar = () => {
