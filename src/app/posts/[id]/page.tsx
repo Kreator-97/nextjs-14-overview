@@ -1,5 +1,13 @@
 import { postService } from "@/posts/server/services"
 
+export async function generateStaticParams() {
+  const posts = await postService.getAll()
+
+  return posts.map(post => ({
+    id: post.id
+  }))
+}
+
 export default async function PostPage(
   { params }: { params: { id: string } }
 ){

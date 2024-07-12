@@ -1,4 +1,7 @@
 
+export const revalidate = 0
+export const dynamic = 'force-dynamic'
+
 export default async function TimePage() {
   const res = await fetch('http://localhost:3000/api/time')
 

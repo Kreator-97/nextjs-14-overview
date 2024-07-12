@@ -1,13 +1,32 @@
 'use client'
 
 import { FormEvent, useState } from "react"
+import { postService } from "../server/services"
+import { createPost } from "../server/actions"
+import { useRouter } from "next/navigation"
 
 export const PostForm = () => {
   const [title, setTitle] = useState<string>('')
   const [content, setContent] = useState<string>('')
+  const router = useRouter()
 
   const onCreatePost = async (event: FormEvent) => {
+    event.preventDefault()
     console.log('creating post')
+    console.log({ title, content })
+
+    if( !title && !content ) {
+      return alert('Title and content are required')
+    }
+
+    const post = await createPost({
+      title,
+      content,
+    })
+
+    console.log({ post })
+
+    router.refresh()
   }
 
   return (
